@@ -1,0 +1,2 @@
+Identificacion	Nombre	Fecha de Nacimiento	Ciudad de Nacimiento	Direccion	Telefono	Correo
+124535625	dasdx	2001-03-04	envigado	cra 93	123124	dasd@unal.edu.co
