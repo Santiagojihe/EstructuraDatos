@@ -34,7 +34,7 @@ while True:
         usuario = Usuario(nombre, numero_identificacion)
         clave = usuario.calcular_clave()
         abb.insertar(
-            clave, numero_identificacion
+            clave, usuario
         )  # esta parte se puede modificar para que al imprimir imprima lo que son identificacion o nombre junto a la clave
         print(f"Usuario '{nombre}' agregado con clave {clave}.")
     elif opcion == "2":
@@ -42,7 +42,7 @@ while True:
         usuario_eliminado = abb.buscar(clave_a_eliminar)
         if usuario_eliminado:
             print(
-                f"Usuario '{usuario_eliminado}' eliminado."
+                f"Usuario '{usuario_eliminado.nombre}'de cedula: {usuario_eliminado.numero_identificacion} eliminado."
             )  # aqui nos muestra el usuario que se elimino con su identificacion
             abb.eliminar(clave_a_eliminar)
         else:
@@ -70,7 +70,7 @@ while True:
     elif opcion == "7":
         clave_busqueda = int(input("escriba la clave a buscar:"))
         encontrado = abb.buscar(clave_busqueda)
-        print(f"la identificacion de esa clave es:{encontrado}")
+        print(f"la identificacion de esa clave es: {encontrado.nombre} con cedula: {encontrado.numero_identificacion}")
     elif opcion == "8":
         break
     else:

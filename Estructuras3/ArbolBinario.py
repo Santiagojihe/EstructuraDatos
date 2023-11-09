@@ -11,12 +11,10 @@ class ArbolBinarioBusqueda:
     def _insertar(self, nodo, clave, valor):
         if nodo is None:
             return NodoABB(clave, valor)
-
         if clave < nodo.clave:
             nodo.izquierdo = self._insertar(nodo.izquierdo, clave, valor)
         elif clave > nodo.clave:
             nodo.derecho = self._insertar(nodo.derecho, clave, valor)
-
         return nodo
 
     def buscar(self, clave):
@@ -75,22 +73,22 @@ class ArbolBinarioBusqueda:
         nodo = self.raiz
         while nodo.derecho is not None:
             nodo = nodo.derecho
-        return nodo.valor
-
+        return nodo.clave
+##^^ si se necesita imprimir la clave/identificacion o el nombre modificar
     def valor_minimo(self):
         if self.raiz is None:
             return None
         nodo = self.raiz
         while nodo.izquierdo is not None:
             nodo = nodo.izquierdo
-        return nodo.valor
-
+        return nodo.clave
+##^^ si se necesita imprimir la clave/identificacion o el nombre modificar
     def mostrar_arbol(self):
         self._mostrar_arbol(self.raiz, "")
 
     def _mostrar_arbol(self, nodo, prefijo):
         if nodo is not None:
-            print(prefijo + "├─" + str(nodo.clave) + ": " + str(nodo.valor))
+            print(prefijo + "├─" + str(nodo.clave) + ": " + str(nodo.valor.nombre))
             self._mostrar_arbol(nodo.izquierdo, prefijo + "│  ")
             self._mostrar_arbol(nodo.derecho, prefijo + "   ")
 
